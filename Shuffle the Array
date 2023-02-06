@@ -1,0 +1,27 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int odd=0;
+        int even=0;
+        int k=0;
+        int[] x=new int[((nums.length))/2];
+        int[] y=new int[((nums.length))/2];
+        for(int i=0;i<(nums.length)/2;i++){
+            x[i]=nums[i];
+        }
+        for(int j=n;j<nums.length;j++){
+            y[k]=nums[j];
+            k++;
+        } 
+        for(int m=0;m<nums.length;m++){
+            if(m%2==0){
+                nums[m]=x[even];
+                even++;
+            }
+            else{
+                nums[m]=y[odd];
+                odd++;
+            }
+        }
+        return nums;
+        }
+}
